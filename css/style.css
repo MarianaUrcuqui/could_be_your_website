@@ -1,0 +1,142 @@
+/* ---------------------- */
+/* ---- basic setup -----*/
+/* ---------------------- */
+@font-face {
+  font-family: 'robotobold';
+  src: url('../fonts/roboto-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'source_sans_probold';
+  src: url('../fonts/sourcesanspro-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'source_sans_prolight';
+  src: url('../fonts/sourcesanspro-light-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+body{
+  margin: 0;
+  padding: 0;
+}
+
+/* --------------------- */
+/* ---- typography ----- */
+/* --------------------- */
+
+.source-light{
+  font-family: 'source_sans_prolight';
+}
+
+.source-bold{
+  font-family: 'source_sans_probold';
+}
+
+header{
+  font-family: 'robotobold';
+  font-size: .6rem;
+  font-weight: 700;
+}
+
+.feature-date{
+  font-size: .75rem;
+}
+
+.feature-title{
+  font-size: 2rem;
+}
+
+/*------------------*/
+/*----- header -----*/
+/*------------------*/
+
+header{
+  display: grid;
+  grid-template: auto / 1em max-content max-content minmax(2em, 1fr) max-content max-content 1em;
+  grid-template-areas: 
+    ". logo brand-name . home about-me";
+  align-items: center;
+}
+
+.logo{
+  padding-right: .2em;
+  width: 1.5em;
+  grid-column: logo;
+  grid-row: 1;
+}
+
+.brand-name{
+  margin: 0;
+  grid-column: brand-name;
+  grid-row: 1;
+}
+
+.home{
+  grid-column: home;
+}
+
+.about-me{
+  grid-column: about-me;
+  margin-left: 1em;
+}
+
+/* ------------------------- */
+/* ----- main content ------ */
+/* ------------------------- */
+
+.feature-article{
+  background-image: url('https://picsum.photos/400');
+  padding: 5.5em 1em 1.5em 1em;
+  align-items: end;
+}
+
+.feature-date, .feature-title, .feature-p{
+  margin: 0;
+  color: whitesmoke;
+  text-shadow: 0px 0px 1px #000;
+}
+
+.feature-p{
+  max-width: 600px;
+}
+
+
+
+
+.blog{
+  display: grid;
+}
+
+
+/* -------------------- */
+/* -------footer------- */
+/* -------------------- */
+
+  footer{
+  background-color: #252525;
+  display: grid;
+  justify-content: center;
+  text-align: center;
+  padding:2em 9.5em;
+  font-family: 'source_sans_prolight';
+}
+
+footer p{
+  margin: 0;
+  padding: 0;
+  color: whitesmoke;
+  font-size: .7rem;
+  white-space: nowrap;
+}
+
+.bold{
+  font-family: 'source_sans_probold';
+}
