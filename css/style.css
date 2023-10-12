@@ -60,9 +60,9 @@ header{
 
 header{
   display: grid;
-  grid-template: auto / 1em max-content max-content minmax(2em, 1fr) max-content max-content 1em;
+  grid-template: auto / 1em max-content max-content minmax(2em, 1fr) max-content 1em;
   grid-template-areas: 
-    ". logo brand-name . home about-me";
+    ". logo brand-name . nav";
   align-items: center;
 }
 
@@ -79,13 +79,31 @@ header{
   grid-row: 1;
 }
 
-.home{
-  grid-column: home;
+nav{
+  grid-column: nav;
 }
 
-.about-me{
-  grid-column: about-me;
-  margin-left: 1em;
+ul{
+  padding: 0;
+  list-style: none;
+}
+
+li{
+  display: inline;
+  margin-left:1em ;
+}
+
+a{
+  text-decoration: none;
+  color: #000;
+}
+
+header a:hover, header a:focus{
+  border-bottom: 1px solid #000;
+}
+
+header a:active{
+  color: #6a6a6a;
 }
 
 /* ------------------------- */
@@ -93,21 +111,64 @@ header{
 /* ------------------------- */
 
 .feature-article{
-  background-image: url('https://picsum.photos/400');
-  padding: 5.5em 1em 1.5em 1em;
-  align-items: end;
+  display: grid;
+  grid-template: minmax(5.3em, 1fr) repeat(3, max-content) 1.5em / 1em auto minmax(1em, 1fr);
+  color: whitesmoke;
+  width: 100%;
+  text-shadow: 0px 0px 1px #000;
+  max-height: 500px;
+}
+
+.feature-img{
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
 }
 
 .feature-date, .feature-title, .feature-p{
   margin: 0;
-  color: whitesmoke;
-  text-shadow: 0px 0px 1px #000;
+  grid-column: 2;
+}
+
+.feature-date{
+  grid-row: 2;
+}
+
+.feature-title{
+  grid-row: 3;
+}
+
+.feature-p{
+  grid-row: 4;
+  max-width: 800px;
 }
 
 
+main{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  padding: 1.5em 1em;
+  gap: 1em;
+}
 
 .blog{
   display: grid;
+  grid-template: repeat(4, auto) / auto;
+  gap:.5em;
+}
+
+.blog-date, .blog-title, .blog-paragraph{
+  margin: 0;
+}
+
+.blog-img{
+  object-fit: cover;
+  width: 100%;
+  margin-bottom: .5em;
+  height: 14.5em;
+  border-radius: 3px;
 }
 
 
@@ -134,4 +195,14 @@ footer p{
 
 .bold{
   font-family: 'source_sans_probold';
+}
+
+/* ------------------------- */
+/* ------ media query ------ */
+/* ------------------------- */
+
+@media(min-width:600px){
+  html{
+    font-size: 19px;
+  }
 }
